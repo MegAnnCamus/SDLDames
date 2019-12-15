@@ -3,6 +3,7 @@
 #include<math.h>
 #include<string.h>
 #include <SDL/SDL.h>
+
 #include"structures.h"
 #include"constantes.h"
 
@@ -139,8 +140,6 @@ int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Su
     SDL_Rect position;
     int i = 1;
     int j = 1;
-
-    SDL_Init(SDL_INIT_VIDEO);
     ecran = SDL_SetVideoMode(TAILLE_ECRAN, TAILLE_ECRAN, 32, SDL_HWSURFACE);
     SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 0, 0, 0));
 

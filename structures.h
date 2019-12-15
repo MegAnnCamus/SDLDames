@@ -30,7 +30,7 @@ typedef struct node
 typedef struct deplacement
 {
 	casePlateau *depart;
-  node *arrivee;
+    node *arrivee;
 	int capNum;
 } deplacement;
 
@@ -42,5 +42,6 @@ typedef struct rafle
 	node *parent;
 	node *child;
 } rafle;
+
 
 

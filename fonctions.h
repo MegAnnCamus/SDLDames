@@ -37,7 +37,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 rafle* getMaxRafle(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], int profondeur);
 
 //mise à jour du plateau en fonction du déplacement effectué
-void jouerTour(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], deplacement* dep);
+void jouerTour(deplacement* dep);
 
 //retourne un pointeur vers le dernier élément d'une liste chainée
 node* getLastNode(struct node* node, struct node* lastNext);

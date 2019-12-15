@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1576411284 source:c:\users\meg-ann\documents\projets\sdldames\main.cpp
+1576446011 source:c:\users\meg-ann\documents\projets\sdldames\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<SDL/SDL.h>
 	"fonctions.h"
+	"menu.h"
 
 1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl.h
 	"SDL_main.h"
@@ -197,7 +198,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1576410293 source:c:\users\meg-ann\documents\projets\sdldames\plateau.cpp
+1576445945 source:c:\users\meg-ann\documents\projets\sdldames\plateau.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -208,7 +209,7 @@
 
 1576403684 c:\users\meg-ann\documents\projets\sdldames\constantes.h
 
-1576410924 c:\users\meg-ann\documents\projets\sdldames\fonctions.h
+1576420621 c:\users\meg-ann\documents\projets\sdldames\fonctions.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -217,7 +218,7 @@
 	"constantes.h"
 	"structures.h"
 
-1576407007 c:\users\meg-ann\documents\projets\sdldames\structures.h
+1576420206 c:\users\meg-ann\documents\projets\sdldames\structures.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -231,4 +232,36 @@
 	<SDL/SDL.h>
 	"structures.h"
 	"constantes.h"
+
+1576445678 source:c:\users\meg-ann\documents\projets\sdldames\deplacements.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<SDL/SDL.h>
+	"structures.h"
+	"constantes.h"
+
+1576445664 source:c:\users\meg-ann\documents\projets\sdldames\menuhandler.cpp
+	<SDL/SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<SDL/SDL_ttf.h>
+	"structures.h"
+	"constantes.h"
+
+1576435871 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1576447037 c:\users\meg-ann\documents\projets\sdldames\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<SDL/SDL.h>
+	<SDL/SDL_ttf.h>
 
