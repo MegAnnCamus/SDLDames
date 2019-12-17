@@ -157,7 +157,6 @@ void allocDeplacement(node* temp, node* result){
 //TODO : séparer pions des dames...
 //TODO : factoriser (deplacements dames)
 //TODO : separer capture de mouvement simple
-//Renvoie la liste des déplacements possibles
 node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau* c, int premierAppel, char pion){
 
 	int x = (*c).numCol;

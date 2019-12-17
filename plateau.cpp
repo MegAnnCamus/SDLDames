@@ -127,6 +127,11 @@ void gestionEvenements(SDL_Surface *ecran)
             case SDL_MOUSEBUTTONDOWN:
                 //recupération la case cliquée
                 test = getCaseCliquee(event);
+                node* listeDeplacementsPossibles = getDeplacementsPion(plateau, test, TRUE, test.type);
+                //liste de liste chainee
+                //chaque liste chainee = liste de déplacements
+                //recupérer la case d'arrivée du premier déplacement de chaque ligne
+                //(la champ data de chaque premier élément de chaque liste)
 
                 break;
         }
