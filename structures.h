@@ -31,7 +31,7 @@ typedef struct deplacement
 {
 	casePlateau *depart;
     node *arrivee;
-	int capNum;
+	int nbPrise;
 } deplacement;
 
 /*liste chainee*/

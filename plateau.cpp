@@ -152,6 +152,7 @@ int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Su
 
     for(j = 0 ; j < TAILLE_PLATEAU ; j++){
         for(i = 0 ; i < TAILLE_PLATEAU  ; i++){
+            //TODO : print pions
             position.x = (i) * TAILLE_CASE;
             position.y = (j) * TAILLE_CASE;
 

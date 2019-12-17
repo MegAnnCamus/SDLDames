@@ -68,6 +68,7 @@ int constructMenu(SDL_Surface* ecran, TTF_Font* font)
 					}
 					break;
 				case SDL_MOUSEBUTTONDOWN:
+				    //TODO : démarrer le jeu
 					x = event.button.x;
 					y = event.button.y;
 					for(int i = 0; i < NB_ITEMS_MENU; i ++) {

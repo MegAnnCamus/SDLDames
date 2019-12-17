@@ -16,9 +16,9 @@ int main(int argc, char **argv) {
     SDL_Surface *ecran = NULL;
     SDL_Init(SDL_INIT_VIDEO);
 
-    afficheMenuJeu(ecran);
+    //afficheMenuJeu(ecran);
     initPlateau();
     affichePlateauConsole();
-    //affichePlateauSDL(plateau,ecran);
+    affichePlateauSDL(plateau,ecran);
     return 0;
 }

@@ -6,6 +6,8 @@
 #include "constantes.h"
 #include "structures.h"
 
+//TODO : séparer dans plusieurs fichiers pour éviter le bazar
+
 //affichage plateau de jeu en ligne de commande (debug)
 void affichePlateauConsole();
 //affichage plateau de jeu en ligne de commande (debug)
@@ -33,9 +35,14 @@ int updateListeCoups(node* nextMoves, int newLig, int newCol);
 node* getCoupsJoueur(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], char color);
 //retourne tous les déplacements possibles pour le pion sur la case c
 node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau* c, int premierAppel, char pion);
+
+//retourne une liste avec seulement un saut (pas une rafle)
+node* getOneMove(int posXDep, int posYDep, int posXArr, int posYArr, int capture);
 //retourne la rafle maximale
 rafle* getMaxRafle(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], int profondeur);
 
+//pour obtenir le plateau mis à jour après un déplacement
+casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU] copierPlateau(casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]);
 //mise à jour du plateau en fonction du déplacement effectué
 void jouerTour(deplacement* dep);
 
@@ -46,9 +53,9 @@ int getScore(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], char couleur);
 
 //GESTION MEMOIRE
 //free liste de cases
-void freeNode(node *node);
+void freeListeCases(node *casesList);
 //free deplacement
-void freeDeplacement(deplacement *dep);
+void freeDeplacement(deplacement *deplacement);
 //free liste de deplacements
 void freeListeDeplacements(node *depList);
 //free rafle
