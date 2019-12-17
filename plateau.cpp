@@ -3,17 +3,16 @@
 #include<math.h>
 #include<string.h>
 #include <SDL/SDL.h>
-
+#include <SDL/SDL_ttf.h>
 #include"structures.h"
 #include"constantes.h"
-
 extern casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
 
 void initPlateau(){
 	int lig, col;
 	for (lig = 0; lig < TAILLE_PLATEAU; lig++){
 		for (col = 0; col < TAILLE_PLATEAU; col++){
-			if ((lig + col) % 2 == 0){
+			if ((lig + col) % 2 == 1){
 				if (col <= 3){
 					plateau[lig][col] = casePlateau{.numLig = lig,.numCol = col, .type = PION_BLANC, .couleur = BLANC};
 				}
@@ -126,7 +125,9 @@ void gestionEvenements(SDL_Surface *ecran)
                 continuer = 0;
                 break;
             case SDL_MOUSEBUTTONDOWN:
+                //recupération la case cliquée
                 test = getCaseCliquee(event);
+
                 break;
         }
 
@@ -142,13 +143,13 @@ void affichePions(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surfac
 
     //Chargement images des pions
     pionNoir = SDL_LoadBMP("./img/pions/pionBlanc.bmp");
-    //SDL_SetColorKey(pionNoir, SDL_SRCCOLORKEY, SDL_MapRGB(pionNoir->format, 255, 255, 255));
+    SDL_SetColorKey(pionNoir, SDL_SRCCOLORKEY, SDL_MapRGB(pionNoir->format, 255, 255, 255));
     pionBlanc = SDL_LoadBMP("./img/pions/pionNoir.bmp");
-    //SDL_SetColorKey(pionBlanc, SDL_SRCCOLORKEY, SDL_MapRGB(pionBlanc->format, 255, 255, 255));
+    SDL_SetColorKey(pionBlanc, SDL_SRCCOLORKEY, SDL_MapRGB(pionBlanc->format, 255, 255, 255));
     dameNoir = SDL_LoadBMP("./img/pions/dameNoir.bmp");
-    //SDL_SetColorKey(dameNoir, SDL_SRCCOLORKEY, SDL_MapRGB(dameNoir->format, 255, 255, 255));
+    SDL_SetColorKey(dameNoir, SDL_SRCCOLORKEY, SDL_MapRGB(dameNoir->format, 255, 255, 255));
     dameBlanc = SDL_LoadBMP("./img/pions/dameBlanc.bmp");
-    //SDL_SetColorKey(dameBlanc, SDL_SRCCOLORKEY, SDL_MapRGB(dameBlanc->format, 255, 255, 255));
+    SDL_SetColorKey(dameBlanc, SDL_SRCCOLORKEY, SDL_MapRGB(dameBlanc->format, 255, 255, 255));
     for(i=0 ;i<TAILLE_PLATEAU ;i++){
         for(j=0 ;j<TAILLE_PLATEAU ;j++) {
             position.x = ((j+1)*TAILLE_CASE)-58;
@@ -172,53 +173,7 @@ void affichePions(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surfac
         }
     }
 }
-int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surface *ecran){
 
-    SDL_Surface *cases[2] = {NULL};
-    SDL_Rect position;
-    int i = 1;
-    int j = 1;
-    ecran = SDL_SetVideoMode(TAILLE_ECRAN, TAILLE_ECRAN, 32, SDL_HWSURFACE);
-    SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 0, 0, 0));
-
-    //case blanche
-    cases[0] = SDL_CreateRGBSurface(SDL_HWSURFACE, TAILLE_CASE, TAILLE_CASE, 32, 0, 0, 0, 0);
-    SDL_FillRect(cases[0], NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
-    //case noire
-    cases[1] = SDL_CreateRGBSurface(SDL_HWSURFACE, TAILLE_CASE, TAILLE_CASE, 32, 0, 0, 0, 0);
-    SDL_FillRect(cases[1], NULL, SDL_MapRGB(ecran->format, 0, 0, 0));
-
-    for(j = 0 ; j < TAILLE_PLATEAU ; j++){
-        for(i = 0 ; i < TAILLE_PLATEAU  ; i++){
-            //TODO : print pions
-            position.x = (i) * TAILLE_CASE;
-            position.y = (j) * TAILLE_CASE;
-
-            if ( (i+j) % 2 == 1 )
-            {
-                SDL_BlitSurface(cases[1], NULL, ecran, &position);
-            }
-            else
-            {
-                SDL_BlitSurface(cases[0], NULL, ecran, &position);
-            }
-        }
-    }
-
-    affichePions(plateau,ecran);
-
-    SDL_WM_SetCaption("Jeu de dames", NULL);
-    /* Mise à jour de l'écran et de tout ce qu'il contient. */
-    SDL_Flip(ecran);
-    gestionEvenements(ecran);
-
-    SDL_FreeSurface(cases[0]);
-    SDL_FreeSurface(cases[1]);
-
-    SDL_Quit();
-
-    return EXIT_SUCCESS;
-}
 
 
 

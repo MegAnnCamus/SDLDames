@@ -3,10 +3,15 @@
 #include<math.h>
 #include<string.h>
 #include<SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
 #include "constantes.h"
 #include "structures.h"
 
 //TODO : séparer dans plusieurs fichiers pour éviter le bazar
+
+//Gestion du menu
+int constructMenu(SDL_Surface* ecran, TTF_Font* font);
+void afficheMenuJeu(SDL_Surface* ecran,casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU]);
 
 //affichage plateau de jeu en ligne de commande (debug)
 void affichePlateauConsole();
@@ -14,6 +19,8 @@ void affichePlateauConsole();
 void afficheLignePlateauConsole();
 //affichage plateau interface graphique
 int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surface *ecran);
+//affichage des pions
+void affichePions(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surface *ecran) ;
 //initialisation plateau tour 1
 void initPlateau();
 //copie plateau pour mise à jour
@@ -22,7 +29,7 @@ void copierPlateau(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlat
 casePlateau getCaseCliquee(SDL_Event evenement);
 
 //nécessaire pour gérer les événements SDL
-void gestionEvenements();
+void gestionEvenements(SDL_Surface *ecran);
 
 //mise à jour du plateau à chaque tour
 void playPartie();
@@ -43,9 +50,9 @@ node* getOneMove(int posXDep, int posYDep, int posXArr, int posYArr, int capture
 rafle* getMaxRafle(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], int profondeur);
 
 //pour obtenir le plateau mis à jour après un déplacement
-//casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU] copierPlateau(casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]);
+void copierPlateau(casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]);
 //mise à jour du plateau en fonction du déplacement effectué
-void jouerTour(deplacement* dep);
+void jouerCoup(deplacement* dep);
 
 //retourne un pointeur vers le dernier élément d'une liste chainée
 node* getLastNode(struct node* noeud, struct node* lastNext);

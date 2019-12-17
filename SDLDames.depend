@@ -1,12 +1,11 @@
 # depslib dependency file v1.0
-1576570516 source:c:\users\meg-ann\documents\projets\sdldames\main.cpp
+1576577144 source:c:\users\meg-ann\documents\projets\sdldames\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<SDL/SDL.h>
 	"fonctions.h"
-	"menu.h"
 
 1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl.h
 	"SDL_main.h"
@@ -198,23 +197,25 @@
 	"begin_code.h"
 	"close_code.h"
 
-1576572503 source:c:\users\meg-ann\documents\projets\sdldames\plateau.cpp
+1576577384 source:c:\users\meg-ann\documents\projets\sdldames\plateau.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<SDL/SDL.h>
+	<SDL/SDL_ttf.h>
 	"structures.h"
 	"constantes.h"
 
 1576403684 c:\users\meg-ann\documents\projets\sdldames\constantes.h
 
-1576571355 c:\users\meg-ann\documents\projets\sdldames\fonctions.h
+1576576930 c:\users\meg-ann\documents\projets\sdldames\fonctions.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<SDL/SDL.h>
+	<SDL/SDL_ttf.h>
 	"constantes.h"
 	"structures.h"
 
@@ -233,7 +234,7 @@
 	"structures.h"
 	"constantes.h"
 
-1576571391 source:c:\users\meg-ann\documents\projets\sdldames\deplacements.cpp
+1576578225 source:c:\users\meg-ann\documents\projets\sdldames\deplacements.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -242,7 +243,7 @@
 	"structures.h"
 	"constantes.h"
 
-1576480454 source:c:\users\meg-ann\documents\projets\sdldames\menuhandler.cpp
+1576576906 source:c:\users\meg-ann\documents\projets\sdldames\menuhandler.cpp
 	<SDL/SDL.h>
 	<stdio.h>
 	<stdlib.h>

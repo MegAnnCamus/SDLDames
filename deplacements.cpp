@@ -13,7 +13,7 @@
 
 extern casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
 
-void jouerTour(deplacement* dep){
+void jouerCoup(deplacement* dep){
 
 	casePlateau* caseDep = (*dep).depart;
 	char pion = plateau[(*caseDep).numLig][(*caseDep).numCol].type;
@@ -157,6 +157,7 @@ void allocDeplacement(node* temp, node* result){
 //TODO : séparer pions des dames...
 //TODO : factoriser (deplacements dames)
 //TODO : separer capture de mouvement simple
+//Renvoie la liste des déplacements possibles
 node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau* c, int premierAppel, char pion){
 
 	int x = (*c).numCol;
