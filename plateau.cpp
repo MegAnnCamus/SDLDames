@@ -134,6 +134,44 @@ void gestionEvenements(SDL_Surface *ecran)
     }
 }
 
+void affichePions(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surface *ecran) {
+
+    int i,j ;
+    SDL_Rect position;
+    SDL_Surface *pionNoir = NULL, *pionBlanc = NULL, *dameBlanc = NULL, *dameNoir = NULL;
+
+    //Chargement images des pions
+    pionNoir = SDL_LoadBMP("./img/pions/pionBlanc.bmp");
+    //SDL_SetColorKey(pionNoir, SDL_SRCCOLORKEY, SDL_MapRGB(pionNoir->format, 255, 255, 255));
+    pionBlanc = SDL_LoadBMP("./img/pions/pionNoir.bmp");
+    //SDL_SetColorKey(pionBlanc, SDL_SRCCOLORKEY, SDL_MapRGB(pionBlanc->format, 255, 255, 255));
+    dameNoir = SDL_LoadBMP("./img/pions/dameNoir.bmp");
+    //SDL_SetColorKey(dameNoir, SDL_SRCCOLORKEY, SDL_MapRGB(dameNoir->format, 255, 255, 255));
+    dameBlanc = SDL_LoadBMP("./img/pions/dameBlanc.bmp");
+    //SDL_SetColorKey(dameBlanc, SDL_SRCCOLORKEY, SDL_MapRGB(dameBlanc->format, 255, 255, 255));
+    for(i=0 ;i<TAILLE_PLATEAU ;i++){
+        for(j=0 ;j<TAILLE_PLATEAU ;j++) {
+            position.x = ((j+1)*TAILLE_CASE)-58;
+            position.y = ((i+1)*TAILLE_CASE)-58;
+            switch(plateau[j][i].type) {
+                case PION_BLANC :
+                    SDL_BlitSurface(pionBlanc, NULL, ecran, &position);
+                    break ;
+                case PION_NOIR :
+                    SDL_BlitSurface(pionNoir, NULL, ecran, &position);
+                    break ;
+                case DAME_NOIR :
+                    SDL_BlitSurface(dameNoir, NULL, ecran, &position);
+                    break ;
+                case DAME_BLANC :
+                    SDL_BlitSurface(dameBlanc, NULL, ecran, &position);
+                    break ;
+                default :
+                    break ;
+            }
+        }
+    }
+}
 int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surface *ecran){
 
     SDL_Surface *cases[2] = {NULL};
@@ -167,6 +205,8 @@ int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Su
         }
     }
 
+    affichePions(plateau,ecran);
+
     SDL_WM_SetCaption("Jeu de dames", NULL);
     /* Mise à jour de l'écran et de tout ce qu'il contient. */
     SDL_Flip(ecran);
@@ -179,5 +219,7 @@ int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Su
 
     return EXIT_SUCCESS;
 }
+
+
 
 
