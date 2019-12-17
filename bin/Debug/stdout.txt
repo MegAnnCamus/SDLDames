@@ -20,11 +20,3 @@
   | p |   | p |   | p |   | p |   | p |   |
   |---------------------------------------|
    
-Case cliquee : (8,8)
-Case cliquee : (8,8)
-Case cliquee : (8,9)
-Case cliquee : (8,9)
-Case cliquee : (5,9)
-Case cliquee : (5,9)
-Case cliquee : (5,8)
-Case cliquee : (5,8)

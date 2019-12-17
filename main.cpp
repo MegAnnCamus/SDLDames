@@ -7,6 +7,7 @@
 #include "menu.h"
 
 casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
+casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU];
 char userColor;
 int minimaxDepth;
 rafle* root;

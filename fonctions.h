@@ -16,7 +16,8 @@ void afficheLignePlateauConsole();
 int affichePlateauSDL(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU],SDL_Surface *ecran);
 //initialisation plateau tour 1
 void initPlateau();
-
+//copie plateau pour mise à jour
+void copierPlateau(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]);
 //recuperation clic
 casePlateau getCaseCliquee(SDL_Event evenement);
 
@@ -30,7 +31,7 @@ void playPartie();
 int coince(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], char couleur);
 
 //mise à jour mouvements possibles
-int updateListeCoups(node* nextMoves, int newLig, int newCol);
+int updateListeCoups(node* nextMoves, int newCol, int newLig);
 //retourne tous les déplacements possibles pour un joueur
 node* getCoupsJoueur(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], char color);
 //retourne tous les déplacements possibles pour le pion sur la case c
@@ -42,12 +43,12 @@ node* getOneMove(int posXDep, int posYDep, int posXArr, int posYArr, int capture
 rafle* getMaxRafle(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], int profondeur);
 
 //pour obtenir le plateau mis à jour après un déplacement
-casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU] copierPlateau(casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]);
+//casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU] copierPlateau(casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]);
 //mise à jour du plateau en fonction du déplacement effectué
 void jouerTour(deplacement* dep);
 
 //retourne un pointeur vers le dernier élément d'une liste chainée
-node* getLastNode(struct node* node, struct node* lastNext);
+node* getLastNode(struct node* noeud, struct node* lastNext);
 //recuperation du score du plateau selon la couleur
 int getScore(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], char couleur);
 

@@ -56,26 +56,13 @@ void jouerTour(deplacement* dep){
 		plateau[(*caseDep).numLig][(*caseDep).numCol].type = DAME_NOIR;
 }
 
-casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU] copierPlateau(casePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]){
+void copierPlateau(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau copie[TAILLE_PLATEAU][TAILLE_PLATEAU]){
 
 	for (int i = 0; i < TAILLE_PLATEAU; i++){
 		for (int j = 0; j < TAILLE_PLATEAU; j++){
 			copie[i][j] = plateau[i][j];
 		}
 	}
-	return copie;
-}
-
-//TODO : ajout dans .h
-void allocDeplacement(node* temp, node* result){
-    if ((*result).data == NULL){
-        freeListeDeplacements(result);
-        result = temp;
-    }
-    else{
-        (*temp).next = result;
-        result = temp;
-    }
 }
 
 node* getOneMove(int posXDep, int posYDep, int posXArr, int posYArr, int capture){
@@ -91,14 +78,42 @@ node* getOneMove(int posXDep, int posYDep, int posXArr, int posYArr, int capture
 	(*(deplacement*)((*temp).data)).depart = (casePlateau*)malloc(sizeof(casePlateau));
 	(*(*(deplacement*)((*temp).data)).depart).numCol = posXDep;
 	(*(*(deplacement*)((*temp).data)).depart).numLig = posYDep;
-	(*(deplacement*)((*temp).data)).dest = (node*)malloc(sizeof(node));
+	(*(deplacement*)((*temp).data)).arrivee = (node*)malloc(sizeof(node));
 
-	(*(*(deplacement*)((*temp).data)).dest).next = NULL;
-	(*(*(deplacement*)((*temp).data)).dest).data = (casePlateau*)malloc(sizeof(casePlateau));
+	(*(*(deplacement*)((*temp).data)).arrivee).next = NULL;
+	(*(*(deplacement*)((*temp).data)).arrivee).data = (casePlateau*)malloc(sizeof(casePlateau));
 
-	(*(casePlateau*)(*(*(deplacement*)((*temp).data)).dest).data).numCol = posXArr;
-	(*(casePlateau*)(*(*(deplacement*)((*temp).data)).dest).data).numLig = posYArr;
+	(*(casePlateau*)(*(*(deplacement*)((*temp).data)).arrivee).data).numCol = posXArr;
+	(*(casePlateau*)(*(*(deplacement*)((*temp).data)).arrivee).data).numLig = posYArr;
 
+	return temp;
+}
+int updateListeCoups(node* nextMoves, int newCol, int newLig){
+
+	node *temp = nextMoves;
+
+	while (temp != NULL){
+		(*(deplacement*)(*temp).data).nbPrise++;
+		node* firstDest = (node*)malloc(sizeof(node));
+
+		(*firstDest).data = (*(deplacement*)(*temp).data).depart;
+		(*firstDest).next = (*(deplacement*)(*temp).data).arrivee;
+		(*(deplacement*)(*temp).data).arrivee = firstDest;
+		(*(deplacement*)(*temp).data).depart = NULL;
+		casePlateau* nouvelleCase = (casePlateau*)malloc(sizeof(casePlateau));
+
+		(*nouvelleCase).numCol = newCol;
+		(*nouvelleCase).numLig = newLig;
+		(*(deplacement*)(*temp).data).depart = nouvelleCase;
+		temp = (*temp).next;
+	}
+	return (1);
+}
+
+node* getLastNode(node* noeud, node* lastNext){
+	node* temp = noeud;
+	while ((*temp).next != lastNext)
+		temp = (*temp).next;
 	return temp;
 }
 
@@ -110,11 +125,11 @@ void freeListeCases(node *casesList){
 	}
 }
 
-void freeMove(deplacement *deplacement){
+void freeDeplacement(deplacement *deplacement){
 	if (deplacement != NULL){
 		if ((*deplacement).depart != NULL)
 			free((*deplacement).depart);
-		freeListOfPositions((*deplacement).arrivee);
+		freeListeCases((*deplacement).arrivee);
 		free(deplacement);
 	}
 }
@@ -125,6 +140,18 @@ void freeListeDeplacements(node *depList){
 		freeDeplacement((deplacement*)(*depList).data);
 		free(depList);
 	}
+}
+
+//TODO : ajout dans .h
+void allocDeplacement(node* temp, node* result){
+    if ((*result).data == NULL){
+        freeListeDeplacements(result);
+        result = temp;
+    }
+    else{
+        (*temp).next = result;
+        result = temp;
+    }
 }
 
 //TODO : séparer pions des dames...
@@ -220,7 +247,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = j - 1;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau,copiePlateau);
+						copierPlateau(plateau,copiePlateau);
 						copiePlateau[j][i].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[j - 1][i - 1].type = pion;
@@ -290,10 +317,10 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 
 						casePlateau* nextStep = (casePlateau*)malloc(sizeof(casePlateau));
 						(*nextStep).numCol = i + 1;
-						(*nextStep).numlig = j - 1;
+						(*nextStep).numLig = j - 1;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau, copiePlateau);
+						copierPlateau(plateau, copiePlateau);
 						copiePlateau[j][i].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[j - 1][i + 1].type = pion;
@@ -368,7 +395,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = j + 1;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau, copiePlateau);
+						copierPlateau(plateau, copiePlateau);
 						copiePlateau[j][i].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[j + 1][i - 1].type = pion;
@@ -444,7 +471,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = j + 1;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau, copiePlateau);
+						copierPlateau(plateau, copiePlateau);
 						copiePlateau[j][i].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[j + 1][i + 1].type = pion;
@@ -506,7 +533,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = y - 2;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau,copiePlateau);
+						copierPlateau(plateau,copiePlateau);
 						copiePlateau[y - 1][x - 1].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[y - 2][x - 2].type = pion;
@@ -564,7 +591,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = y - 2;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau,copiePlateau);
+						copierPlateau(plateau,copiePlateau);
 						copiePlateau[y - 1][x + 1].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[y - 2][x + 2].type = pion;
@@ -613,7 +640,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 		//verif capture bas gauche
 		if ((x - 1 >= 0) && (y + 1 < TAILLE_PLATEAU)){
 			if ((((pion == DAME_BLANC) || (pion == PION_BLANC)) && ((plateau[y + 1][x - 1].type == PION_NOIR) || (plateau[y + 1][x - 1].type == DAME_NOIR))) ||
-				(((pion == DAME_NOIR) || (pion == PION_NOIR)) && ((pplateau[y + 1][x - 1].type == PION_BLANC) || (plateau[y + 1][x - 1].type == DAME_BLANC)))){
+				(((pion == DAME_NOIR) || (pion == PION_NOIR)) && ((plateau[y + 1][x - 1].type == PION_BLANC) || (plateau[y + 1][x - 1].type == DAME_BLANC)))){
 				if ((x - 2 >= 0) && (y + 2 < TAILLE_PLATEAU)){
 					if (plateau[y + 2][x - 2].type == CASE_VIDE){
 						casePlateau* nextStep = (casePlateau*)malloc(sizeof(casePlateau));
@@ -621,7 +648,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = y + 2;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau,copiePlateau);
+						copierPlateau(plateau,copiePlateau);
 						copiePlateau[y + 1][x - 1].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[y + 2][x - 2].type = pion;
@@ -678,7 +705,7 @@ node* getDeplacementsPion(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], c
 						(*nextStep).numLig = y + 2;
 
 						casePlateau copiePlateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
-						copiePlateau = copierPlateau(plateau,copiePlateau);
+						copierPlateau(plateau,copiePlateau);
 						copiePlateau[y + 1][x + 1].type = CASE_VIDE;
 						copiePlateau[y][x].type = CASE_VIDE;
 						copiePlateau[y + 2][x + 2].type = pion;

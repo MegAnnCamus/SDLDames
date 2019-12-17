@@ -81,13 +81,13 @@ casePlateau getCaseCliquee(SDL_Event evenement){
 
 }
 
-casePlateau controlPremierClic(joueur joueurEnCours, SDL_Event evenement, casePlateau *plateau[TAILLE_PLATEAU][TAILLE_PLATEAU], casePlateau *oldCase){
+casePlateau controlPremierClic(joueur joueurEnCours, SDL_Event evenement, casePlateau *oldCase){
 
     casePlateau caseCliquee;
 	caseCliquee = getCaseCliquee(evenement);
 
-	if(plateau[caseCliquee.numLig][caseCliquee.numCol]->type != ' '){ //Si la case n'est pas libre
-		if(plateau[caseCliquee.numLig][caseCliquee.numCol]->couleur == joueurEnCours.couleur){ //Si la couleur du pion correspond à celle du joueur en cours
+	if(plateau[caseCliquee.numLig][caseCliquee.numCol].type != ' '){ //Si la case n'est pas libre
+		if(plateau[caseCliquee.numLig][caseCliquee.numCol].couleur == joueurEnCours.couleur){ //Si la couleur du pion correspond à celle du joueur en cours
 			*oldCase = caseCliquee;
 			printf("Premier clic reussi : ligne = %d colonne = %d \n", caseCliquee.numLig, caseCliquee.numCol);
 		}
@@ -96,13 +96,13 @@ casePlateau controlPremierClic(joueur joueurEnCours, SDL_Event evenement, casePl
 
 }
 
-casePlateau controlDeuxiemeClic(SDL_Event evenement,casePlateau *newCase, casePlateau *oldCase, casePlateau *plateau[TAILLE_PLATEAU][TAILLE_PLATEAU]){
+casePlateau controlDeuxiemeClic(SDL_Event evenement,casePlateau *newCase, casePlateau *oldCase){
 	casePlateau caseCliquee;
 	casePlateau caseCoup;
 
 	caseCliquee = getCaseCliquee(evenement);
 
-	if(plateau[caseCliquee.numLig][caseCliquee.numCol]->type != ' '){
+	if(plateau[caseCliquee.numLig][caseCliquee.numCol].type != ' '){
 		//Si la case selectionne correspond a une des cases du tableau des coups possibles
 		*newCase = caseCliquee;
         //TODO : deplacer
