@@ -22,6 +22,7 @@ typedef struct joueur
 /*element d'une liste chainee*/
 typedef struct node
 {
+    //data : une case du plateau
 	void* data;
 	struct node* next;
 } node;

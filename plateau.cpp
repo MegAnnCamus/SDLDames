@@ -4,8 +4,8 @@
 #include<string.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
-#include"structures.h"
-#include"constantes.h"
+#include "deplacements.h"
+
 extern casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
 
 void initPlateau(){
@@ -127,7 +127,7 @@ void gestionEvenements(SDL_Surface *ecran)
             case SDL_MOUSEBUTTONDOWN:
                 //recupération la case cliquée
                 test = getCaseCliquee(event);
-                node* listeDeplacementsPossibles = getDeplacementsPion(plateau, test, TRUE, test.type);
+                //node* listeDeplacementsPossibles = getDeplacementsPion(plateau, *test, TRUE, test.type);
                 //liste de liste chainee
                 //chaque liste chainee = liste de déplacements
                 //recupérer la case d'arrivée du premier déplacement de chaque ligne

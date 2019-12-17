@@ -4,8 +4,7 @@
 #include<string.h>
 #include <SDL/SDL.h>
 
-#include"structures.h"
-#include"constantes.h"
+#include "gestionMemoire.h"
 
 //TODO : séparer dans plusieurs fichiers si possible...
 //mettre gestion mémoire dans un seul cpp
@@ -115,43 +114,6 @@ node* getLastNode(node* noeud, node* lastNext){
 	while ((*temp).next != lastNext)
 		temp = (*temp).next;
 	return temp;
-}
-
-void freeListeCases(node *casesList){
-	if (casesList != NULL){
-		freeListeCases((*casesList).next);
-		free((*casesList).data);
-		free(casesList);
-	}
-}
-
-void freeDeplacement(deplacement *deplacement){
-	if (deplacement != NULL){
-		if ((*deplacement).depart != NULL)
-			free((*deplacement).depart);
-		freeListeCases((*deplacement).arrivee);
-		free(deplacement);
-	}
-}
-
-void freeListeDeplacements(node *depList){
-	if (depList != NULL){
-		freeListeDeplacements((*depList).next);
-		freeDeplacement((deplacement*)(*depList).data);
-		free(depList);
-	}
-}
-
-//TODO : ajout dans .h
-void allocDeplacement(node* temp, node* result){
-    if ((*result).data == NULL){
-        freeListeDeplacements(result);
-        result = temp;
-    }
-    else{
-        (*temp).next = result;
-        result = temp;
-    }
 }
 
 //TODO : séparer pions des dames...

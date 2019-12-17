@@ -4,6 +4,7 @@
 
 #define TRUE 1
 #define FALSE 0
+#define NB_ITEMS_MENU 2
 
 #define PION_BLANC 'p'
 #define DAME_BLANC 'd'
