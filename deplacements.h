@@ -19,3 +19,5 @@ node* getOneMove(int posXDep, int posYDep, int posXArr, int posYArr, int capture
 node* getLastNode(struct node* noeud, struct node* lastNext);
 //mise à jour du plateau en fonction du déplacement effectué
 void jouerCoup(deplacement* dep);
+//free liste de deplacements
+void freeListeDeplacements(node *depList);

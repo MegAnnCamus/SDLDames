@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1576581866 source:c:\users\meg-ann\documents\projets\sdldames\main.cpp
+1576608776 source:c:\users\meg-ann\documents\projets\sdldames\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -8,7 +8,7 @@
 	<SDL/SDL_ttf.h>
 	"gestionAffichage.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_audio.h"
@@ -27,14 +27,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_main.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_stdinc.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -60,7 +60,7 @@
 	<stdlib.h>
 	"close_code.h"
 
-1326110988 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_config.h
+1326110987 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_config.h
 	"SDL_platform.h"
 	"SDL_config_dreamcast.h"
 	"SDL_config_macos.h"
@@ -70,16 +70,16 @@
 	"SDL_config_os2.h"
 	"SDL_config_minimal.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_platform.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_platform.h
 
 1326110994 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_config_win32.h
 	"SDL_platform.h"
 
 1326111000 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\begin_code.h
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\close_code.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\close_code.h
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_audio.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -89,24 +89,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_error.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_endian.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_mutex.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_thread.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_mutex.h"
@@ -114,24 +114,24 @@
 	<process.h>
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_rwops.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_cdrom.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_cdrom.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_events.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_active.h"
@@ -142,63 +142,63 @@
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_active.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_active.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_keyboard.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keysym.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_keysym.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_keysym.h
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_mouse.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_video.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_joystick.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_quit.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_timer.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1325738640 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_version.h
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1576582173 source:c:\users\meg-ann\documents\projets\sdldames\plateau.cpp
+1576609678 source:c:\users\meg-ann\documents\projets\sdldames\plateau.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -207,9 +207,9 @@
 	<SDL/SDL_ttf.h>
 	"deplacements.h"
 
-1576581566 c:\users\meg-ann\documents\projets\sdldames\constantes.h
+1576608776 c:\users\meg-ann\documents\projets\sdldames\constantes.h
 
-1576581805 c:\users\meg-ann\documents\projets\sdldames\fonctions.h
+1576608776 c:\users\meg-ann\documents\projets\sdldames\fonctions.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -219,7 +219,7 @@
 	"constantes.h"
 	"structures.h"
 
-1576580619 c:\users\meg-ann\documents\projets\sdldames\structures.h
+1576608776 c:\users\meg-ann\documents\projets\sdldames\structures.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -234,7 +234,7 @@
 	"structures.h"
 	"constantes.h"
 
-1576608396 source:c:\users\meg-ann\documents\projets\sdldames\deplacements.cpp
+1576608776 source:c:\users\meg-ann\documents\projets\sdldames\deplacements.cpp
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -252,7 +252,7 @@
 	"structures.h"
 	"constantes.h"
 
-1576435872 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_ttf.h
+1576435871 c:\program files (x86)\codeblocks\sdl-1.2.15\include\sdl\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
@@ -265,7 +265,7 @@
 	<SDL/SDL.h>
 	<SDL/SDL_ttf.h>
 
-1576608264 source:c:\users\meg-ann\documents\projets\sdldames\gestionmemoire.c
+1576608776 source:c:\users\meg-ann\documents\projets\sdldames\gestionmemoire.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -275,7 +275,7 @@
 	"structures.h"
 	"constantes.h"
 
-1576581425 c:\users\meg-ann\documents\projets\sdldames\gestionaffichage.h
+1576608776 c:\users\meg-ann\documents\projets\sdldames\gestionaffichage.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -285,7 +285,7 @@
 	"constantes.h"
 	"structures.h"
 
-1576582125 source:c:\users\meg-ann\documents\projets\sdldames\gestionaffichage.c
+1576608776 source:c:\users\meg-ann\documents\projets\sdldames\gestionaffichage.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -294,7 +294,7 @@
 	<SDL/SDL_ttf.h>
 	"fonctions.h"
 
-1576608381 c:\users\meg-ann\documents\projets\sdldames\gestionmemoire.h
+1576609042 c:\users\meg-ann\documents\projets\sdldames\gestionmemoire.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -304,7 +304,7 @@
 	"constantes.h"
 	"structures.h"
 
-1576581802 c:\users\meg-ann\documents\projets\sdldames\deplacements.h
+1576609175 c:\users\meg-ann\documents\projets\sdldames\deplacements.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -313,4 +313,23 @@
 	<SDL/SDL_ttf.h>
 	"constantes.h"
 	"structures.h"
+
+1576609490 source:c:\users\meg-ann\documents\projets\sdldames\gestionmemoire.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<SDL/SDL.h>
+	<SDL/SDL_ttf.h>
+	"structures.h"
+	"constantes.h"
+
+1576609687 source:c:\users\meg-ann\documents\projets\sdldames\gestionaffichage.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<SDL/SDL.h>
+	<SDL/SDL_ttf.h>
+	"fonctions.h"
 

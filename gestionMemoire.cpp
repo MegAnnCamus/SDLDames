@@ -43,3 +43,4 @@ void allocDeplacement(node* temp, node* result){
         result = temp;
     }
 }
+

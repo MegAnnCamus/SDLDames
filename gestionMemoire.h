@@ -13,11 +13,11 @@
 void freeListeCases(node *casesList);
 //free deplacement
 void freeDeplacement(deplacement *deplacement);
-//free liste de deplacements
+//free liste de deplacement
 void freeListeDeplacements(node *depList);
 //free rafle
 void freeRafle(rafle* rafle);
 //free une liste de rafles
 void freeListeRafle(rafle *rafleList);
-//allocation
+
 void allocDeplacement(node* temp, node* result);
