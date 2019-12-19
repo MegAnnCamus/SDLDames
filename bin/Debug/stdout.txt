@@ -1,2 +1,0 @@
-Case cliquee : (5,6)
-Case cliquee : (5,6)

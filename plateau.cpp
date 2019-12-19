@@ -8,7 +8,7 @@
 
 extern casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU];
 
-void initPlateau(){
+void initPlateau(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU]){
 	int lig, col;
 	for (lig = 0; lig < TAILLE_PLATEAU; lig++){
 		for (col = 0; col < TAILLE_PLATEAU; col++){
@@ -78,36 +78,6 @@ casePlateau getCaseCliquee(SDL_Event evenement){
 	}
     return caseCliquee;
 
-}
-
-casePlateau controlPremierClic(joueur joueurEnCours, SDL_Event evenement, casePlateau *oldCase){
-
-    casePlateau caseCliquee;
-	caseCliquee = getCaseCliquee(evenement);
-
-	if(plateau[caseCliquee.numLig][caseCliquee.numCol].type != ' '){ //Si la case n'est pas libre
-		if(plateau[caseCliquee.numLig][caseCliquee.numCol].couleur == joueurEnCours.couleur){ //Si la couleur du pion correspond à celle du joueur en cours
-			*oldCase = caseCliquee;
-			printf("Premier clic reussi : ligne = %d colonne = %d \n", caseCliquee.numLig, caseCliquee.numCol);
-		}
-	}
-	return caseCliquee;
-
-}
-
-casePlateau controlDeuxiemeClic(SDL_Event evenement,casePlateau *newCase, casePlateau *oldCase){
-	casePlateau caseCliquee;
-	casePlateau caseCoup;
-
-	caseCliquee = getCaseCliquee(evenement);
-
-	if(plateau[caseCliquee.numLig][caseCliquee.numCol].type != ' '){
-		//Si la case selectionne correspond a une des cases du tableau des coups possibles
-		*newCase = caseCliquee;
-        //TODO : deplacer
-	}
-
-	return caseCliquee;
 }
 
 void gestionEvenements(SDL_Surface *ecran)

@@ -14,7 +14,7 @@ void affichePlateauConsole();
 //affichage plateau de jeu en ligne de commande (debug)
 void afficheLignePlateauConsole();
 //initialisation plateau tour 1
-void initPlateau();
+void initPlateau(casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU]);
 
 //recuperation clic
 casePlateau getCaseCliquee(SDL_Event evenement);

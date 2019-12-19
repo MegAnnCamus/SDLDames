@@ -197,6 +197,7 @@ int constructMenu(SDL_Surface* ecran, TTF_Font* font, casePlateau plateau[TAILLE
 
 void afficheMenuJeu(SDL_Surface *ecran, casePlateau plateau[TAILLE_PLATEAU][TAILLE_PLATEAU])
 {
+    initPlateau(plateau);
 	ecran = SDL_SetVideoMode(TAILLE_ECRAN,TAILLE_ECRAN,32,SDL_SWSURFACE);
 	SDL_WM_SetCaption("Jeu de dames", NULL);
 
